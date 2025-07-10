@@ -1,0 +1,17 @@
+tr {
+    transition: background-color .3s ease;
+    cursor: pointer;
+    &:hover {
+        background-color: #efefef;
+    }
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .mat-icon {
+        margin: 4px;
+    }
+}

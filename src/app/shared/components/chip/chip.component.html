@@ -1,0 +1,22 @@
+<mat-form-field class="chip-list">
+    <mat-label>Filter by hero name</mat-label>
+    <mat-chip-grid #chipGrid aria-label="Enter fruits">
+        @for (name of heroesList(); track name) {
+            <mat-chip-row
+              (removed)="remove(name)"
+              [editable]="true"
+            >
+                {{ name }}
+                <button matChipRemove [attr.aria-label]="'remove ' + name">
+                  <mat-icon>cancel</mat-icon>
+                </button>
+            </mat-chip-row>
+        }
+        <input
+            placeholder="New hero name..."
+            [matChipInputFor]="chipGrid"
+            [matChipInputAddOnBlur]="true"
+            (matChipInputTokenEnd)="add($event)"
+        />
+    </mat-chip-grid>
+</mat-form-field>

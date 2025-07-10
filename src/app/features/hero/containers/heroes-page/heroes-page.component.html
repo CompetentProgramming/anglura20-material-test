@@ -1,0 +1,14 @@
+<main>
+    <header>
+        <app-chip (heroesListChange)="heroesListFilterChanged($event)"></app-chip>
+        <div>
+            <button class="create-hero-btn" matButton (click)="createHero()">Create hero</button>
+        </div>
+    </header>
+    <app-pie-chart [data]="genderChartInfo()"></app-pie-chart>
+    <app-grid
+        [data]="heroList()"
+        (gridRowClicked)="gridRowClicked($event)"
+        (deleteHeroClicked)="deleteHero($event)"
+        (editHeroClicked)="editHero($event)"></app-grid>
+</main>

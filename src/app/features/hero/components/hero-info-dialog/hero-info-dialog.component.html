@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Hero: {{ data.hero?.nameLabel || '' }}</h2>
+<mat-dialog-content>
+    <form [formGroup]="heroForm">
+        <mat-form-field class="field-wrapper">
+            <mat-label>Name:</mat-label>
+            <input matInput type="text" formControlName="nameLabel" />
+        </mat-form-field>
+        <mat-radio-group formControlName="genderLabel" aria-label="Gender">
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field class="field-wrapper">
+            <mat-label>Citizenship:</mat-label>
+            <input matInput type="text" formControlName="citizenshipLabel" />
+        </mat-form-field>
+        <mat-form-field class="field-wrapper">
+            <mat-label>Skills:</mat-label>
+            <input matInput type="text" formControlName="skillsLabel" />
+        </mat-form-field>
+        <mat-form-field class="field-wrapper">
+            <mat-label>Occupation:</mat-label>
+            <input matInput type="text" formControlName="occupationLabel" />
+        </mat-form-field>
+        <mat-form-field class="field-wrapper">
+            <mat-label>Member of:</mat-label>
+            <input matInput type="text" formControlName="memberOfLabel" />
+        </mat-form-field>
+        <mat-form-field class="field-wrapper">
+            <mat-label>Creator:</mat-label>
+            <input matInput type="text" formControlName="creatorLabel" />
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button matButton mat-dialog-close>Cancel</button>
+    <button matButton [disabled]="!heroForm.valid" (click)="handleFormSubmit()">Submit</button>
+</mat-dialog-actions>
